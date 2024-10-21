@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: skoda
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5437:5432"
+    volumes:
+      - skoda_db_volume:/var/lib/postgresql/data
+
+volumes:
+  skoda_db_volume:
